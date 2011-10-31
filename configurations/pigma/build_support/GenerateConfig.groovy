@@ -28,14 +28,14 @@ class GenerateConfig {
 			fileset(dir:resources.canonicalPath)
 		}
 		
-		// copy correct shared.maven.filters for subTarget
+		// set shared.server.name dependent on the prod or int server
 		def host = "shared.server.name="
 		switch (subTarget) {
-			case "int": 
-				host += "ns383241.ovh.net"
+			case "prod": 
+				host += "ns383242.ovh.net"
 				break
 			default: 
-				host += "ns383242.ovh.net"
+				host += "ns383241.ovh.net"
 				break
 		}
 		
