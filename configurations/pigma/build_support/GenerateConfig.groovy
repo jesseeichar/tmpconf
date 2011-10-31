@@ -27,9 +27,20 @@ class GenerateConfig {
 		ant.copy(todir:outputDir.canonicalPath) {
 			fileset(dir:resources.canonicalPath)
 		}
+		
 		// copy correct shared.maven.filters for subTarget
-		def filters = new File(buildSupportDir, "${subTarget}.shared.maven.filters").getText("UTF-8")
-		new File(outputDir, "shared.maven.filters").write(filters, "UTF-8")
+		def host = "shared.server.name="
+		switch (subTarget) {
+			case "int": 
+				host += "ns383241.ovh.net"
+				break
+			default: 
+				host += "ns383242.ovh.net"
+				break
+		}
+		
+		new File(outputDir, "shared.maven.filters").write(host, "UTF-8")
+		
 		// need to modify the targets of the security-proxy to also proxy to geowebcache
 		def spMavenFilter = new Properties()
 		new File(basedirFile,'defaults'+SEP+'security-proxy'+SEP+"maven.filter").withReader { r -> 
