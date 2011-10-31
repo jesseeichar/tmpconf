@@ -119,7 +119,7 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-jar-plugin</artifactId>
 				<configuration>
-					<subTarget>${server}</subTarget>
+					<classifier>${server}</classifier>
 				</configuration>
 			</plugin>
 		</plugins>
