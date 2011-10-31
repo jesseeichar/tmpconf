@@ -100,14 +100,12 @@
 							</scriptpath>
 							<source>
 								def targetDir = new File("${project.build.directory}")
-								targetDir.deleteDir()
-								targetDir.mkdirs()
-								def outputDir = new File("${generated.output}")
 								def basedirFile = new File("project.basedir")
 								def project = "${server}"
 								def classifier = "${classifier}"
 								def projectDir = new File("${conf.base}")
 								def buildSupportDir = new File("${build.support.dir}")
+								def outputDir = new File("${project.build.outputDirectory}")
 								new VariableSubstitutionTest().execute(
 									project, log, ant, basedirFile, 
 									project, classifier, projectDir, 
