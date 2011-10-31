@@ -13,13 +13,13 @@ class GenerateConfig {
 	 * @param ant an AntBuilder (see groovy docs) for executing ant tasks
 	 * @param basedirFile a File object that references the base directory of the conf project
 	 * @param target the server property which is normally set by the build profile.  It indicates the project that is being built
-	 * @param classifier the "classifier" that the project is being deployed to.  For example integration or production
+	 * @param subTarget the "subTarget" that the project is being deployed to.  For example integration or production
 	 * @param targetDir a File object referencing the targetDir
 	 * @param buildSupportDir a File object referencing the build_support dir of the target project
 	 * @param outputDir the directory to copy the generated configuration files to
 	 */
 	def generate(def project, def log, def ant, def basedirFile, 
-							def target, def classifier, def targetDir, 
+							def target, def subTarget, def targetDir, 
 							def buildSupportDir, def outputDir) {
 		// nothing needs to be done for this project
 	}

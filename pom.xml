@@ -71,7 +71,7 @@
 								def outputDir = new File("${generated.output}")
 								def basedirFile = new File("project.basedir")
 								def project = "${server}"
-								def classifier = "${classifier}"
+								def subTarget = "${sub.target}"
 								def projectDir = new File("${conf.base}")
 								def buildSupportDir = new File("${build.support.dir}")
 								outputDir.deleteDir()
@@ -80,7 +80,7 @@
 								try {
 									new GenerateConfig().generate(
 										project, log, ant, basedirFile, 
-										project, classifier, projectDir, 
+										project, subTarget, projectDir, 
 										buildSupportDir, outputDir)
 								} catch (ClassNotFoundException e) {
 									log.info("No GenerateConfig class found so skipping generation step")
@@ -102,13 +102,13 @@
 								def targetDir = new File("${project.build.directory}")
 								def basedirFile = new File("project.basedir")
 								def project = "${server}"
-								def classifier = "${classifier}"
+								def subTarget = "${sub.target}"
 								def projectDir = new File("${conf.base}")
 								def buildSupportDir = new File("${build.support.dir}")
 								def outputDir = new File("${project.build.outputDirectory}")
 								new VariableSubstitutionTest().execute(
 									project, log, ant, basedirFile, 
-									project, classifier, projectDir, 
+									project, subTarget, projectDir, 
 									buildSupportDir, outputDir)
 							</source>
 						</configuration>
@@ -119,7 +119,7 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-jar-plugin</artifactId>
 				<configuration>
-					<classifier>${server}</classifier>
+					<subTarget>${server}</subTarget>
 				</configuration>
 			</plugin>
 		</plugins>
