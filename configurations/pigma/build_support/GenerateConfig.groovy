@@ -7,6 +7,7 @@
  * are needed depending on serverId.  More can be done but that is the classic example
  */
 class GenerateConfig {
+	def SEP = File.separator
 	/**
 	 * @param project The maven project.  you can get all information about the project from this object
 	 * @param log a logger for logging info
@@ -29,5 +30,22 @@ class GenerateConfig {
 		// copy correct shared.maven.filters for subTarget
 		def filters = new File(buildSupportDir, "${subTarget}.shared.maven.filters").getText("UTF-8")
 		new File(outputDir, "shared.maven.filters").write(filters, "UTF-8")
+		// need to modify the targets of the security-proxy to also proxy to geowebcache
+		def spMavenFilter = new Properties()
+		new File(basedirFile,'defaults'+SEP+'security-proxy'+SEP+"maven.filter").withReader { r -> 
+			spMavenFilter.load(r)
+		}
+		
+		spMavenFilter.put('proxy.mapping',"""
+			<entry key="extractorapp" value="http://localhost:8081/extractorapp-private/" />
+			<entry key="mapfishapp" value="http://localhost:8081/mapfishapp-private/" />
+			<entry key="geonetwork" value="http://localhost:8081/geonetwork-private/" />
+			<entry key="catalogapp" value="http://localhost:8081/catalogapp-private/" />
+			<entry key="geoserver" value="http://localhost:8181/geoserver/" />
+			<entry key="geowebcache" value="http://localhost:8081/geowebcache-private/" />""".replaceAll("\n|\t",""))
+		
+		def spDir = new File(outputDir,'security-proxy')
+		spDir.mkdirs()
+	  new File(spDir, "maven.filter").withWriter{ w -> spMavenFilter.store(w,"updated by pigma's GenerateConfig class")}
 	}
 }

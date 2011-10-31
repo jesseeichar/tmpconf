@@ -69,7 +69,7 @@
 								targetDir.deleteDir()
 								targetDir.mkdirs()
 								def outputDir = new File("${generated.output}")
-								def basedirFile = new File("project.basedir")
+								def basedirFile = new File("${basedir}")
 								def project = "${server}"
 								def subTarget = "${sub.target}"
 								def projectDir = new File("${conf.base}")
@@ -100,7 +100,7 @@
 							</scriptpath>
 							<source>
 								def targetDir = new File("${project.build.directory}")
-								def basedirFile = new File("project.basedir")
+								def basedirFile = new File("${basedir}")
 								def project = "${server}"
 								def subTarget = "${sub.target}"
 								def projectDir = new File("${conf.base}")
