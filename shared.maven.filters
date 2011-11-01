@@ -27,3 +27,5 @@ other.framework.log.level=WARN
 
 shared.smtpHost=mail.camptocamp.com
 shared.smtpPort=25
+
+shared.geonetwork.dir=@shared.c2c.tomcat.dir@/work/gn_data
