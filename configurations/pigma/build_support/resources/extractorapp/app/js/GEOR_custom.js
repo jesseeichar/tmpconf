@@ -163,7 +163,7 @@ GEOR.custom = {
         {
             text: "PIGMA",
             owstype: "WMS",
-            owsurl: "http://ns383241.ovh.net/geoserver/pigma/wms"
+            owsurl: "http://@shared.server.name@/geoserver/pigma/wms"
         }
     ],
     

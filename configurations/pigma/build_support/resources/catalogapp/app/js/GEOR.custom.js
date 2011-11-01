@@ -15,21 +15,21 @@ GEOR.custom = {
      * The URL to the GeoNetwork server.
      * Defaults to "/geonetwork/srv/fr"
      */
-    GEONETWORK_URL: "http://ns383241.ovh.net/geonetwork/srv/fr",
+    GEONETWORK_URL: "http://@shared.server.name@/geonetwork/srv/fr",
 
     /**
      * Constant: VIEWER_URL
      * The URL to Mapfishapp
      * Defaults to "/mapfishapp/"
      */
-    VIEWER_URL: "http://ns383241.ovh.net/mapfishapp/",
+    VIEWER_URL: "http://@shared.server.name@/mapfishapp/",
         
     /**
      * Constant: EXTRACTOR_URL
      * The URL to Extractorapp
      * Defaults to "/extractorapp/"
      */
-    EXTRACTOR_URL: "http://ns383241.ovh.net/extractorapp/"
+    EXTRACTOR_URL: "http://@shared.server.name@/extractorapp/"
     
     /**
      * Constant: MAP_DOTS_PER_INCH
