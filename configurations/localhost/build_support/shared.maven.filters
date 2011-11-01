@@ -1,5 +1,5 @@
 # shared values like public url can be put here
-shared.server.name=ns383241.ovh.net
+shared.server.name=@shared.server.name@
 shared.ldapUrl=ldap://ldap-dev.pigma.org:389/
 shared.server.port=80
 
