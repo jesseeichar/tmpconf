@@ -24,3 +24,6 @@ shared.psql.url=jdbc:postgresql://@shared.psql.host@:@shared.psql.port@/@shared.
 
 shared.default.log.level=INFO
 other.framework.log.level=WARN
+
+shared.smtpHost=mail.camptocamp.com
+shared.smtpPort=25

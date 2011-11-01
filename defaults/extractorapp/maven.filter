@@ -9,8 +9,8 @@ servletUrl=http://@shared.server.name@:@shared.server.port@/extractorapp
 secureHost=http://@shared.server.name@:@shared.server.port@/geoserver
 
 # Email properties
-smtpHost=psemail.epfl.ch
-smtpPort=25
+smtpHost=@shared.smtpHost@
+smtpPort=@shared.smtpPort@
 replyTo=arnaud.deshogues@camptocamp.com
 from=noreply@camptocamp.com
 

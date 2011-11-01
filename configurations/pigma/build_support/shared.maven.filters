@@ -9,3 +9,5 @@ shared.privileged.geoserver.user=<do not commit>
 shared.privileged.geoserver.pass=<do not commit>
 
 shared.ldap.baseDn=dc=pigma,dc=org
+
+replyTo=francois.vanderbiest@camptocamp.com
