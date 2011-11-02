@@ -22,8 +22,11 @@ class GenerateConfig {
 	def generate(def project, def log, def ant, def basedirFile, 
 							def target, def subTarget, def targetDir, 
 							def buildSupportDir, def outputDir) {
+		log.debug("pigma generate script starting")
 		def resources = new File(buildSupportDir, "resources")
 		// copy all resource files (configuration files)
+		log.debug("Running groovy configuration generation scripts")
+		
 		ant.copy(todir:outputDir.canonicalPath) {
 			fileset(dir:resources.canonicalPath)
 		}
@@ -39,7 +42,9 @@ class GenerateConfig {
 				break
 		}
 		
-		new File(outputDir, "shared.maven.filters").write(host, "UTF-8")
+		def sharedMavenFilters = new File(outputDir, "shared.maven.filters")
+		log.debug("writing "+host+" to "+sharedMavenFilters)
+		sharedMavenFilters.write(host, "UTF-8")
 		
 		// need to modify the targets of the security-proxy to also proxy to geowebcache
 		def spMavenFilter = new Properties()
@@ -57,6 +62,10 @@ class GenerateConfig {
 		
 		def spDir = new File(outputDir,'security-proxy')
 		spDir.mkdirs()
-	  new File(spDir, "maven.filter").withWriter{ w -> spMavenFilter.store(w,"updated by pigma's GenerateConfig class")}
+    def spMavenFilterFile = new File(spDir, "maven.filter")
+		log.debug("writing "+spMavenFilter+" to "+spMavenFilterFile)
+
+	  spMavenFilterFile.withWriter{ w -> spMavenFilter.store(w,"updated by pigma's GenerateConfig class")}
+		log.debug("pigma generate script finished")
 	}
 }
