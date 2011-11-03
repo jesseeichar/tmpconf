@@ -11,8 +11,8 @@ shared.ldap.userSearchFilter=uid=%u
 shared.ldap.groupSearchBaseDN=ou=groups
 shared.ldap.admin.dn=cn=admin,@shared.ldap.baseDn@
 
-shared.c2c.tomcat.dir=/srv/tomcat/tomcat1/
-shared.c2c.logdir=/var/log/tomcat/
+shared.c2c.tomcat.dir=/srv/tomcat/tomcat1
+shared.c2c.logdir=/var/log/tomcat
 
 shared.psql.host=localhost
 shared.psql.port=5432

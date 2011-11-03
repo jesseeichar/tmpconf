@@ -3,7 +3,7 @@ debug=false
 
 dataDir=@shared.geonetwork.dir@
 uploadDir=${dataDir}/uploads
-luceneDir=lucene
+luceneDir=${dataDir}/lucene
 htmlCacheDir=htmlCache
 
 baseUrl=geonetwork
