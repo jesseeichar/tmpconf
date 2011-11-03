@@ -6,7 +6,7 @@ host=@shared.server.name@
 servletUrl=http://@shared.server.name@:@shared.server.port@/extractorapp
 
 # Hostname of the geoserver that is secured for geOrchestra.
-secureHost=http://@shared.server.name@:@shared.server.port@/geoserver
+secureHost=@shared.server.name@
 
 # Email properties
 smtpHost=@shared.smtpHost@
