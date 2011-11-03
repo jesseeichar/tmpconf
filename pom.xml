@@ -12,9 +12,9 @@
 	<url>http://www.georchestra.org</url>
 	<build>
 		<filters>
-			<filter>${generated.output}/shared.maven.filters</filter>
-			<filter>${build.support.dir}/shared.maven.filters</filter>
 			<filter>${basedir}/shared.maven.filters</filter>
+			<filter>${build.support.dir}/shared.maven.filters</filter>
+			<filter>${generated.output}/shared.maven.filters</filter>
 		</filters>
 		<resources>
 			<resource>
