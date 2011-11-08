@@ -201,24 +201,22 @@ GEOR.custom = {
      * {Array} The map's scales.
      * Defaults to GeoBretagne GWC compliant scales
      */
-    /*MAP_SCALES : [
-        266.591197934,
-        533.182395867,
-        1066.364791734,
-        2132.729583468,
-        4265.459166936,
-        8530.918333871,
-        17061.836667742,
-        34123.673335484,
-        68247.346670968,
-        136494.693341936,
-        272989.386683873,
-        545978.773367746,
-        1091957.546735491,
-        2183915.093470982,
-        4367830.186941965,
-        8735660.373883929
-    ],*/
+    MAP_SCALES : [
+        500,
+        1000,
+        2000,
+        5000,
+        10000,
+        25000,
+        50000,
+        100000,
+        200000,
+        500000,
+        1000000,
+        1500000,
+        2000000,
+        4000000
+    ],
 
     /**
      * Constant: MAP_SRS
@@ -363,6 +361,13 @@ GEOR.custom = {
      * Defaults to "/doc/html/documentation.html#viewer"
      */
     //HELP_URL: "/doc/html/documentation.html#viewer",
+    
+    /**
+     * Constant: CONFIRM_LAYER_REMOVAL
+     * {Boolean} Do we want a popup dialog to appear on layer removal ?
+     * Defaults to false
+     */
+    //CONFIRM_LAYER_REMOVAL: false,
     
     /**
      * Constant: WMS_SERVERS
