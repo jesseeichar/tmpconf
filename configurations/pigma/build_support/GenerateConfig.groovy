@@ -35,7 +35,7 @@ class GenerateConfig {
 		def host = "shared.server.name="
 		switch (subTarget) {
 			case "prod": 
-				host += "ns383242.ovh.net"
+				host += "ids.pigma.org"
 				break
 			default: 
 				host += "ns383241.ovh.net"
