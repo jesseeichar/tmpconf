@@ -2,8 +2,8 @@ transformFactory=de.fzi.dbs.xml.transform.CachingTransformerFactory
 debug=false
 
 dataDir=@shared.geonetwork.dir@
-uploadDir=${dataDir}/uploads
-luceneDir=${dataDir}/lucene
+uploadDir=@shared.geonetwork.dir@/uploads
+luceneDir=@shared.geonetwork.dir@/lucene
 htmlCacheDir=htmlCache
 
 baseUrl=geonetwork
