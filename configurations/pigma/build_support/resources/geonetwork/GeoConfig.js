@@ -80,7 +80,7 @@ Geonetwork.CONFIG.GeoPublisher = {
     layerFactory: function() {
       return [
         new OpenLayers.Layer.WMS('Baselayer','/geoserver/wms', {
-            layers:'fond_gip',
+            layers:'Fond_GIP',
             format: 'image/png'
         },{
             tileSize: new OpenLayers.Size(256, 256), 
